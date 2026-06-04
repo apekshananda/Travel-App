@@ -4,18 +4,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: Arial, Helvetica, sans-serif;
-  --font-mono: monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
   }
 }
 
@@ -23,44 +17,61 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* Custom components defined as utility classes */
 .glass-card {
   width: 100%;
-  max-width: 24rem;
-  padding: 2rem;
-  border-radius: 1.25rem;
-  background: rgba(15, 23, 42, 0.8);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 450px; 
+  padding: 3.5rem; 
+  margin: 1.5rem;
+  border-radius: 2rem;
+  
+  background: rgba(24, 24, 27, 0.35); 
+  
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px); 
+  
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
 
 .input-field {
   width: 100%;
-  padding: 0.75rem;
+  padding: 1rem;
   border-radius: 0.75rem;
   background: #27272a;
   color: #ffffff;
-  border: 1px solid #47474f;
+  border: 1px solid #3f3f46;
   outline: none;
+  
+  /* ADDED: This creates the gap between inputs */
+  margin-bottom: 1.5rem; 
+  
+  display: block;
+  transition: border-color 0.2s;
 }
 
 .input-field:focus {
-  border-color: #737373;
+  border-color: #71717a;
 }
-  .login-button {
+
+.login-button {
   width: 100%;
-  padding: 0.75rem 0;
+  padding: 1rem; /* Slightly increased padding */
   border-radius: 0.75rem;
   background: #ffffff;
   color: #000000;
   font-weight: 700;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s;
+  cursor: pointer;
 }
 
 .login-button:hover {
-  background: #e5e7eb;
+  background: #e4e4e7;
 }

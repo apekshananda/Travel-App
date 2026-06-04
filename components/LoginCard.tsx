@@ -17,29 +17,28 @@ export default function LoginCard() {
   };
 
   return (
-    // Replaced .glass-card with its classes
-    <div className="relative z-10 w-full max-w-sm p-8 rounded-2xl bg-zinc-900/80 backdrop-blur-md border border-white/10 shadow-2xl text-center">
-      <h1 className="text-3xl font-semibold text-white mb-6">Voyago</h1>
+    <div className="relative z-10 glass-card">
+      {/* 1. Used 'text-[4rem]' (arbitrary value) to bypass CSS overrides.
+        2. Added 'leading-tight' to ensure large text doesn't look squashed.
+      */}
+      <h2 className="text-[4rem] font-extrabold text-white mb-12 tracking-tight leading-tight">
+        Voyago
+      </h2>
       
-      <form className="flex flex-col gap-4" onSubmit={handleLogin}>
-        {/* Replaced .input-field with its classes */}
+      <form className="flex flex-col space-y-6" onSubmit={handleLogin}>
         <input 
-          className="w-full p-3 rounded-lg bg-zinc-800 text-white border border-zinc-700 focus:outline-none focus:border-zinc-500" 
+          className="input-field" 
           placeholder="Email" 
           onChange={(e) => setEmail(e.target.value)} 
         />
         <input 
-          className="w-full p-3 rounded-lg bg-zinc-800 text-white border border-zinc-700 focus:outline-none focus:border-zinc-500" 
+          className="input-field" 
           placeholder="Password" 
           type="password" 
           onChange={(e) => setPassword(e.target.value)} 
         />
         
-        {/* Replaced .login-button with its classes */}
-        <button 
-          type="submit" 
-          className="w-full py-3 rounded-lg bg-white text-black font-bold hover:bg-zinc-200 transition-colors"
-        >
+        <button type="submit" className="login-button py-4">
           Sign In
         </button>
       </form>
