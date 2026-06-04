@@ -9,7 +9,7 @@ export default function LoginCard() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email === '1234@' && password === '21234') {
+    if (email === '1234@gmail.com' && password === '1234') {
       router.push('/dashboard');
     } else {
       alert('Invalid credentials!');
@@ -18,14 +18,11 @@ export default function LoginCard() {
 
   return (
     <div className="relative z-10 glass-card">
-      {/* 1. Used 'text-[4rem]' (arbitrary value) to bypass CSS overrides.
-        2. Added 'leading-tight' to ensure large text doesn't look squashed.
-      */}
       <h2 className="text-[4rem] font-extrabold text-white mb-12 tracking-tight leading-tight">
         Voyago
       </h2>
       
-      <form className="flex flex-col space-y-6" onSubmit={handleLogin}>
+      <form className="flex flex-col space-y-4" onSubmit={handleLogin}>
         <input 
           className="input-field" 
           placeholder="Email" 
@@ -38,8 +35,24 @@ export default function LoginCard() {
           onChange={(e) => setPassword(e.target.value)} 
         />
         
-        <button type="submit" className="login-button py-4">
-          Sign In
+        {/* Primary Action */}
+        <button type="submit" className="login-button py-4 mt-2">
+          Log In
+        </button>
+
+        {/* Visual Divider */}
+        <div className="flex items-center gap-4 text-zinc-400 py-2">
+          <div className="h-px bg-zinc-600 flex-1" />
+          <span className="text-sm">OR</span>
+          <div className="h-px bg-zinc-600 flex-1" />
+        </div>
+
+        {/* Secondary Actions using CSS classes */}
+        <button type="button" className="secondary-button">
+          Sign Up
+        </button>
+        <button type="button" className="google-button">
+          Sign up with Google
         </button>
       </form>
     </div>

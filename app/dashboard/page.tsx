@@ -1,20 +1,31 @@
 import Navbar from '@/components/Navbar';
 
-export default function Dashboard() {
+export default function DashboardPage() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-white">
-      <Navbar />
+    <div 
+      className="min-h-screen w-full bg-cover bg-center flex flex-col items-center p-6" 
+      style={{ backgroundImage: "url('/assets/dashboard-mountain.jpg')" }}
+    >
+      {/* Navbar wrapper */}
+      <div className="w-full max-w-6xl">
+        <Navbar />
+      </div>
       
-      {/* Hero Section of Dashboard */}
-      <section className="h-[70vh] flex flex-col justify-center items-center text-center px-4">
-        <h1 className="text-6xl font-bold mb-6">Find the road less taken.</h1>
-        <p className="text-xl text-zinc-400 mb-10">Tell us where you're going. We&apos;ll plan the spots.</p>
-        
-        {/* Placeholder for Search Bar */}
-        <div className="w-full max-w-4xl bg-zinc-900/50 p-6 rounded-2xl border border-white/10 backdrop-blur-lg">
-          <p className="text-zinc-500 italic">Search bar components go here...</p>
+      {/* Main Content Area */}
+      <main className="w-full max-w-6xl flex-grow flex items-center justify-center">
+        {/* Added !max-w-none to override the narrow LoginCard width */}
+        <div className="glass-card !max-w-none w-full p-16 text-center">
+          <h2 className="text-6xl font-bold text-white mb-6">Where to next, explorer?</h2>
+          <p className="text-2xl text-white/70 mb-12">Your AI-curated adventures are waiting.</p>
+          
+          <div className="bg-black/30 p-8 rounded-2xl border border-white/10 backdrop-blur-md">
+             <input 
+               className="w-full bg-transparent text-white placeholder-white/50 outline-none text-2xl text-center" 
+               placeholder="Ask AI to plan a trip to..."
+             />
+          </div>
         </div>
-      </section>
-    </main>
+      </main>
+    </div>
   );
 }
