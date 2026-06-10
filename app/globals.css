@@ -2,43 +2,51 @@
 @import "tailwindcss/utilities";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Fraunces', serif;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* REMOVED: display: flex, justify-center, align-center to allow Grid to control layout */
   min-height: 100vh;
 }
 
+/* Base Glass Class */
+.glass-base {
+  background: rgba(24, 24, 27, 0.35);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Login/Form Card: Keeps your max-width constraint */
 .glass-card {
   width: 100%;
   max-width: 450px; 
   padding: 3.5rem; 
-  margin: 1.5rem;
+  margin: 1.5rem auto; /* Centers the card */
   border-radius: 2rem;
-  
   background: rgba(24, 24, 27, 0.35); 
-  
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px); 
-  
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   text-align: center;
+}
+
+/* Dashboard Panel: Flexible, no max-width */
+.dashboard-panel {
+  background: rgba(24, 24, 27, 0.35);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 2rem;
+  padding: 1.5rem;
+  color: white;
 }
 
 .input-field {
@@ -49,10 +57,7 @@ body {
   color: #ffffff;
   border: 1px solid #3f3f46;
   outline: none;
-  
-  /* ADDED: This creates the gap between inputs */
   margin-bottom: 1.5rem; 
-  
   display: block;
   transition: border-color 0.2s;
 }
