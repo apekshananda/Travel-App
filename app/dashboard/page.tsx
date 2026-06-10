@@ -3,36 +3,37 @@ import Navbar from '@/components/Navbar';
 export default function DashboardPage() {
   return (
     <div 
-      className="min-h-screen w-full bg-cover bg-center p-4 flex flex-col font-serif" 
+      className="min-h-screen w-full bg-cover bg-center p-6 flex flex-col font-serif" 
       style={{ backgroundImage: "url('/assets/dashboard-mountain.jpg')" }}
     >
-      <Navbar />
+      {/* Container to align Navbar with the main content */}
+      <div className="max-w-4xl mx-auto w-full">
+        <Navbar />
+      </div>
       
-      {/* Main Container: Centered Chatbot */}
-      <main className="flex-grow w-full max-w-2xl mx-auto mt-6 flex flex-col">
+      {/* Centered Main Layout */}
+      <main className="flex-grow w-full max-w-4xl mx-auto mt-6 h-[80vh]">
         
-        {/* Chatbot Panel */}
-        <aside className="bg-black/40 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 flex flex-col shadow-2xl h-[80vh]">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center">✨</div>
+        {/* Chatbot Panel: Now nicely constrained */}
+        <aside className="dashboard-panel flex flex-col h-full shadow-2xl">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center text-xl">✨</div>
             <div>
-              <h2 className="text-xl font-bold text-white">Travel Concierge</h2>
-              <p className="text-emerald-400 text-sm">● Online</p>
+              <h2 className="text-2xl font-bold text-white">Travel Concierge</h2>
+              <p className="text-emerald-400 text-sm tracking-wide">● Online</p>
             </div>
           </div>
           
-          {/* Chat History Area */}
-          <div className="flex-grow text-white/90 leading-relaxed space-y-4 overflow-y-auto pr-2">
-            <p className="bg-white/10 p-4 rounded-2xl">
-              Hi! I'm your travel concierge. Tell me what kind of trip you're planning to Calgary, Canada and I'll help you get started.
+          <div className="flex-grow text-white/90 leading-relaxed overflow-y-auto space-y-4">
+            <p className="bg-white/5 p-6 rounded-3xl border border-white/5 backdrop-blur-sm">
+              Hi! I'm your travel concierge. Tell me what kind of trip you're planning to Banff, Canada and I'll pin spots, scenic detours, and great tables along the way.
             </p>
           </div>
 
-          {/* Input Area */}
-          <div className="mt-4">
+          <div className="mt-6">
             <input 
-              className="w-full bg-white/10 p-4 rounded-xl border border-white/10 text-white placeholder-white/50 outline-none" 
-              placeholder="Ask about Calgary, Canada..."
+              className="w-full bg-black/20 p-6 rounded-2xl border border-white/10 text-white placeholder-white/40 outline-none focus:border-white/20 transition-all" 
+              placeholder="Ask about Banff, Canada..."
             />
           </div>
         </aside>

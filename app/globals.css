@@ -1,5 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&display=swap');
 @import "tailwindcss/preflight";
 @import "tailwindcss/utilities";
+
 
 :root {
   --background: #0a0a0a;
@@ -11,42 +14,29 @@ body {
   color: var(--foreground);
   font-family: 'Fraunces', serif;
   margin: 0;
-  /* REMOVED: display: flex, justify-center, align-center to allow Grid to control layout */
   min-height: 100vh;
 }
 
-/* Base Glass Class */
-.glass-base {
+/* 3. --- AUTH PAGE STYLES --- */
+.glass-effect {
   background: rgba(24, 24, 27, 0.35);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Login/Form Card: Keeps your max-width constraint */
 .glass-card {
   width: 100%;
-  max-width: 450px; 
-  padding: 3.5rem; 
-  margin: 1.5rem auto; /* Centers the card */
+  max-width: 450px;
+  padding: 3.5rem;
+  margin: 1.5rem auto;
   border-radius: 2rem;
-  background: rgba(24, 24, 27, 0.35); 
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px); 
-  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   text-align: center;
-}
-
-/* Dashboard Panel: Flexible, no max-width */
-.dashboard-panel {
   background: rgba(24, 24, 27, 0.35);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 2rem;
-  padding: 1.5rem;
-  color: white;
 }
 
 .input-field {
@@ -57,58 +47,62 @@ body {
   color: #ffffff;
   border: 1px solid #3f3f46;
   outline: none;
-  margin-bottom: 1.5rem; 
+  margin-bottom: 1.5rem;
   display: block;
   transition: border-color 0.2s;
 }
 
-.input-field:focus {
-  border-color: #71717a;
-}
+.input-field:focus { border-color: #71717a; }
 
-.login-button {
-  width: 100%;
-  padding: 1rem; /* Slightly increased padding */
-  border-radius: 0.75rem;
-  background: #ffffff;
-  color: #000000;
-  font-weight: 700;
-  transition: background-color 0.2s;
-  cursor: pointer;
-}
-
-.login-button:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-.secondary-button {
+.btn-base {
   width: 100%;
   padding: 1rem;
   border-radius: 0.75rem;
-  color: #000000; 
-  background: #ffffff;
   font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  background: #ffffff;
+  color: #000000;
+}
+
+.login-button { font-weight: 700; }
+
+.secondary-button, .google-button {
   border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.2s;
-  cursor: pointer;
   margin-top: 1rem;
 }
 
-.secondary-button:hover {
+.login-button:hover, .secondary-button:hover, .google-button:hover {
   background: rgba(255, 255, 255, 0.1);
+  color: white;
 }
 
-.google-button {
+/* 4. --- DASHBOARD PAGE STYLES --- */
+.dash-panel {
+  background: rgba(24, 24, 27, 0.4);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 2.5rem;
+  padding: 2.5rem;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dash-input {
   width: 100%;
-  padding: 1rem;
-  border-radius: 0.75rem;
-  background: #ffffff;
-  color: #000000;
-  font-weight: 600;
+  padding: 1.25rem;
+  border-radius: 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  outline: none;
+  display: block;
   transition: all 0.2s;
-  cursor: pointer;
-  margin-top: 1rem;
 }
 
-.google-button:hover {
-  background: rgba(255, 255, 255, 0.1);
+.dash-input:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.3);
 }
