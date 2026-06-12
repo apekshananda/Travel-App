@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&display=swap');
 @import "tailwindcss/preflight";
 @import "tailwindcss/utilities";
@@ -54,60 +53,40 @@ body {
 
 .input-field:focus { border-color: #71717a; }
 
-.btn-base {
-  width: 100%;
-  padding: 1rem;
-  border-radius: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-align: center;
-  background: #ffffff;
-  color: #000000;
-}
 
-.login-button { font-weight: 700; }
 
-.secondary-button, .google-button {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  margin-top: 1rem;
-}
-
-.login-button:hover, .secondary-button:hover, .google-button:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-}
-
-/* 4. --- DASHBOARD PAGE STYLES --- */
+/* --- DASHBOARD GLASS STYLES --- */
 .dash-panel {
-  
-  background: rgba(24, 24, 27, 0.4);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1.5rem; /* Smoother, more rounded corners */
-  padding: 1.5rem;
+  /* Increased opacity for a more solid, opaque feel */
+  background: rgba(24, 24, 27, 0.75); 
+  backdrop-filter: blur(70px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 2rem;
   color: white;
+  padding: 2rem;
   height: 100%;
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.dash-input {
-  width: 100%;
-  padding: 1.25rem;
-  border-radius: 1.5rem;
-  background: rgba(0, 0, 0, 0.2);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  outline: none;
-  display: block;
-  transition: all 0.2s;
+/* Blinking animation for the online status */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
 }
 
-.dash-input:focus {
-  border-color: rgba(255, 255, 255, 0.3);
-  background: rgba(0, 0, 0, 0.3);
+.status-online {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: blink 2s infinite;
 }
 
 /* 5. --- DASHBOARD NAVBAR --- */
@@ -116,12 +95,10 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 1.5rem;
-  background: rgba(24, 24, 27, 0.4);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1.5rem;
   margin-bottom: 2rem;
-  
+  backdrop-filter: blur(70px);
+  border-radius: 2rem;
+  margin-top:1rem;
 }
 
 .nav-search-wrapper {
